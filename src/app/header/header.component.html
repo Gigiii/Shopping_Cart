@@ -1,0 +1,13 @@
+<div class="header">
+  <div class="header-left">
+    <header-logo [logoUrl]="logoUrl">
+
+    </header-logo>
+  </div>
+
+  <div class="header-right">
+    <header-item *ngFor="let item of items" [itemLogoUrl]="item.itemLogoUrl" [itemName]="item.itemName">
+
+    </header-item>
+  </div>
+</div>

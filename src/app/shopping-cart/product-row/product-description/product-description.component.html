@@ -1,0 +1,9 @@
+<div class="product-description-container">
+  <h2 class="product-name"> {{ product.name }}</h2>
+  <span class="subtitle">Size: {{ product.size }} </span>
+  <span class="subtitle">Seller: {{ product.seller }} </span>
+  <div class="button-container">
+    <button class="btn-remove" (click)="onRemove()">Remove</button>
+    <button class="btn-save">Save For Later</button>
+  </div>
+</div>

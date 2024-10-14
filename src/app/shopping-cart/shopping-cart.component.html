@@ -1,1 +1,17 @@
-<p>shopping-cart works!</p>
+<div class="shopping-cart-container">
+
+  <div class="product-container">
+    <product-row *ngFor="let cartItem of cartItems; let i = index"
+     [cartItem]="cartItem"
+     [index]="i"
+     (remove)="removeCartItem(i)"
+     (changeQty)="changeCartQuantity($event.index, $event.quantity)"></product-row>
+  </div>
+
+  <div class="button-row">
+    <button class="btn-blue" >Back to shop</button>
+
+    <button class="btn-white">Remove all</button>
+  </div>
+
+</div>

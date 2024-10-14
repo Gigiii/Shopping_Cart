@@ -1,0 +1,9 @@
+<div class="product-container">
+  <div class="product-left">
+    <product-image [imageUrl]="cartItem.product.imageUrl"></product-image>
+
+    <product-description [product]="cartItem.product" (remove)="onRemove()" [index]="index"></product-description>
+  </div>
+
+  <product-price-quantity [cartItem]="cartItem" (change)="onChange($event.quantity)" [index]="index"></product-price-quantity>
+</div>

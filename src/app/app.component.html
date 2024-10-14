@@ -2,11 +2,17 @@
   <header></header>
 
   <div class="shopping-cart-row">
-    <h2>My cart ({{ products.length }})</h2>
-    <div class="shopping-cart-left">
+    <h1>My cart ({{ cartItems.length }})</h1>
+    <div class="shopping-cart-container">
+      <shopping-cart [cartItems]="cartItems"> </shopping-cart>
 
+      <div class="shopping-cart-right">
+          <p>Price: {{ getTotalPrice() }}</p>
+          <checkout>
+
+          </checkout>
+      </div>
     </div>
-    <shopping-cart></shopping-cart>
   </div>
 </div>
 

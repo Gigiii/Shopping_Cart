@@ -1,0 +1,14 @@
+.product-container{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgb(230,233,237);
+}
+
+.product-left{
+  display: flex;
+  gap: 15px;
+}

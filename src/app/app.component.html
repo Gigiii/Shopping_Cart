@@ -4,14 +4,10 @@
   <div class="shopping-cart-row">
     <h1>My cart ({{ cartItems.length }})</h1>
     <div class="shopping-cart-container">
-      <shopping-cart [cartItems]="cartItems"> </shopping-cart>
+      <shopping-cart class="shopping-cart-left" [cartItems]="cartItems"> </shopping-cart>
 
-      <div class="shopping-cart-right">
-          <p>Price: {{ getTotalPrice() }}</p>
-          <checkout>
-
-          </checkout>
-      </div>
+      <checkout class="shopping-cart-right" >
+      </checkout>
     </div>
   </div>
 </div>

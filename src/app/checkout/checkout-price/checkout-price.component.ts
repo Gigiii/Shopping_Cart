@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-checkout-price',
+  selector: 'checkout-price',
   standalone: true,
   imports: [],
   templateUrl: './checkout-price.component.html',

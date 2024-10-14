@@ -1,1 +1,16 @@
-<p>coupons works!</p>
+<div class="coupon-container">
+  <h4>Have a coupon?</h4>
+
+  <div class="coupon-input-row">
+    <form (ngSubmit)="applyCoupon()">
+      <input
+        type="text"
+        placeholder="Add Coupon"
+        [(ngModel)]="inputCoupon"
+        name="couponInput"
+        required
+      >
+      <button type="submit">Apply</button>
+    </form>
+  </div>
+</div>

@@ -27,6 +27,7 @@ export class AppComponent {
       quantity: 5
     }
   ]
+  price : number = this.getTotalPrice();
 
   getTotalPrice(): number {
     return this.cartItems.reduce((total, item) => {
@@ -34,4 +35,12 @@ export class AppComponent {
     }, 0)
   }
 
+  updateTotalPrice() {
+    this.price = this.getTotalPrice();
+  }
+
+  handleCartUpdate(updatedCartItems: CartItem[]){
+    this.cartItems = updatedCartItems;
+    this.updateTotalPrice();
+  }
 }

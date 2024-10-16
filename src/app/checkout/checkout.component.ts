@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CouponsComponent } from './coupons/coupons.component';
 import { CheckoutPriceComponent } from './checkout-price/checkout-price.component';
 
@@ -10,5 +10,10 @@ import { CheckoutPriceComponent } from './checkout-price/checkout-price.componen
   styleUrl: './checkout.component.scss'
 })
 export class CheckoutComponent {
+  discount : number = 0;
+  @Input() price! : number;
 
+  handleDiscount(discount : number){
+    this.discount = discount;
+  }
 }

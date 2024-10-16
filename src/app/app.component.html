@@ -4,9 +4,9 @@
   <div class="shopping-cart-row">
     <h1>My cart ({{ cartItems.length }})</h1>
     <div class="shopping-cart-container">
-      <shopping-cart class="shopping-cart-left" [cartItems]="cartItems"> </shopping-cart>
+      <shopping-cart class="shopping-cart-left" (cartUpdated)="handleCartUpdate($event)" [cartItems]="cartItems"> </shopping-cart>
 
-      <checkout class="shopping-cart-right" >
+      <checkout class="shopping-cart-right" [price]="price" >
       </checkout>
     </div>
   </div>

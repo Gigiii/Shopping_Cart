@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 interface Coupon {
@@ -14,6 +14,7 @@ interface Coupon {
   templateUrl: './coupons.component.html',
   styleUrl: './coupons.component.scss'
 })
+
 export class CouponsComponent {
   coupons: Coupon[] = [
     { code: 'SAVE10', discount: 10 },
@@ -23,6 +24,8 @@ export class CouponsComponent {
 
   usedCoupons: string[] = [];
   inputCoupon: string = '';
+  @Output() totalDiscount = new EventEmitter<number>();
+  discount : number  = 0;
 
   applyCoupon() {
     const couponCode = this.inputCoupon.trim().toUpperCase();
@@ -40,21 +43,24 @@ export class CouponsComponent {
 
     const totalDiscount = this.calculateTotalDiscount(coupon.discount);
 
-    if (totalDiscount > 100) {
-      alert('Cannot exceed 100% discount');
-      return;
-    }
-
     this.usedCoupons.push(couponCode);
+
     alert(`Coupon applied! You received a ${coupon.discount}% discount.`);
+
+    this.totalDiscount.emit(totalDiscount);
+
     this.inputCoupon = '';
   }
 
   calculateTotalDiscount(discount: number): number {
-    // This function would normally take the current total amount and calculate the new discount
-    // For now, we will just return the discount as a demonstration.
-    // You can replace this with your total calculation logic.
-    return discount;
+
+    if (this.discount + discount > 100) {
+      alert('Cannot exceed 100% discount');
+      return this.discount;
+    }
+
+    this.discount += discount;
+    return this.discount;
   }
 
 }

@@ -1,5 +1,5 @@
 <div class="product-price-container">
   <p class="product-price">${{ cartItem.product.price }}</p>
   <label [htmlFor]="index">Qty: </label>
-  <input (change)="onChange($event)" type="number" name="quantity" [id]="index" [defaultValue]="cartItem.quantity" min="1" max="999">
+  <input (change)="onChange($event)" type="number" class="quantity-input" name="quantity" [id]="index" [defaultValue]="cartItem.quantity" min="1" max="999">
 </div>

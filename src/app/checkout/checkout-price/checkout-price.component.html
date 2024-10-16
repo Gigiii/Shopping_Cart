@@ -1,1 +1,28 @@
-<p>checkout-price works!</p>
+<div class="checkout-price-container">
+  <div class="prices-container">
+
+    <div class="price-row">
+      <p>Subtotal:</p>
+      <p>${{ subtotal }}</p>
+
+    </div>
+
+    <div class="price-row">
+      <p>Discount:</p>
+      <p class="red-text">- ${{ totalDiscount }}</p>
+
+    </div>
+
+    <div class="price-row bottom-border">
+      <p>Tax:</p>
+      <p class="green-text">+ ${{ tax }}</p>
+    </div>
+
+    <div class="price-row">
+      <p class="black-text total-text">Total:</p>
+      <p class="black-text total-text">${{ total }}</p>
+    </div>
+
+    <button class="checkout-btn">Checkout</button>
+  </div>
+</div>
